@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://www.purebasic.com/namespace" version="1.0" creator="PureBasic 6.21 (Windows - x64)">
+  <section name="config">
+    <options closefiles="1" openmode="0" name="Notes_C"/>
+    <comment>Notes.C (short for 'Notes Collector'') is a lightweight desktop application written in PureBasic that lets you create, edit, and organize related notes stored in a local SQLite database. It uses the Scintilla editing component, allowing rich text formatting and folding.</comment>
+  </section>
+  <section name="data">
+    <explorer view="" pattern="0"/>
+    <log show="1"/>
+    <lastopen date="2025-11-04 14:46" user="dnmendes" host="RLIQLZL176"/>
+  </section>
+  <section name="files">
+    <file name="MyScintilla.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="5" panelstate="+"/>
+      <fingerprint md5="9c627d78dcb6982d03a5a1d1306f91f1"/>
+    </file>
+    <file name="Geral.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="2" panelstate="+"/>
+      <fingerprint md5="81e8c56043dc133e61fde4e5c4453f5a"/>
+    </file>
+    <file name="MyNotesForm.pbf">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="3" panelstate="+"/>
+      <fingerprint md5="b61e0ac13452b0e6d7489d08bfbb61e4"/>
+    </file>
+    <file name="ScintillaStyles.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="6" panelstate="+"/>
+      <fingerprint md5="616baaed7c84d965d94688e6a10ec60a"/>
+    </file>
+    <file name="Notes_C.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="1" panelstate="+"/>
+      <fingerprint md5="6d6c9fefeecb5ddcbf9ddedb95fa8ab1"/>
+    </file>
+    <file name="MyNotesForm.pbi">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="4" panelstate="+"/>
+      <fingerprint md5="152f85496f3e71b8f12150f2b3411605"/>
+    </file>
+    <file name="FileIO.pb">
+      <config load="0" scan="1" panel="1" warn="1" lastopen="1" sortindex="7" panelstate=""/>
+      <fingerprint md5="419c78789c1c14f2f40a159c3c3989ab"/>
+    </file>
+  </section>
+  <section name="targets">
+    <target name="Default Target" enabled="1" default="1">
+      <inputfile value="Notes_C.pb"/>
+      <outputfile value="Notes_C.exe"/>
+      <executable value="Notes_C.exe"/>
+      <options xpskin="1" debug="1" optimizer="0"/>
+      <temporaryexe value="source"/>
+    </target>
+  </section>
+</project>

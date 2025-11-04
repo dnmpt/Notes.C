@@ -1,0 +1,99 @@
+﻿;╔═══════════════════════════════════════════════════════════════════════════════╗
+;║                     MyNotesForm.pbi  - version 0.11-alpha                     ║
+;╟───────────────────────────────────────────────────────────────────────────────╢
+;║            Copyright 2021-2025  Duarte Mendes <duartenm@net.sapo.pt>          ║
+;║                                                                               ║
+;║ Permission is hereby granted, free of charge, To any person obtaining a copy  ║
+;║ of this software And associated documentation files (the "Software"), To deal ║
+;║ in the Software without restriction, including without limitation the rights  ║
+;║ To use, copy, modify, merge, publish, distribute, sublicense, And/Or sell     ║
+;║ copies of the Software, subject To the following conditions:                  ║
+;║                                                                               ║
+;║ The above copyright notice And this permission notice shall be included in    ║
+;║ all copies Or substantial portions of the Software.                           ║     
+;║                                                                               ║
+;║ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,               ║
+;║ EXPRESS Or IMPLIED, INCLUDING BUT Not LIMITED To THE WARRANTIES               ║
+;║ OF MERCHANTABILITY, FITNESS For A PARTICULAR PURPOSE And NONINFRINGEMENT.     ║
+;╟───────────────────────────────────────────────────────────────────────────────╢
+;║ > PURPOSE :                                                                   ║
+;║ Formulary derived from the automatic file 'MyNotesForm.pbf' costumized        ║
+;║ for variables, declarations, etc. This is the form file to be included.       ║
+;╚═══════════════════════════════════════════════════════════════════════════════╝ 
+
+
+Global Scintilla_0 ; default longint
+
+Global Img_Window_0_0, Img_Window_0_1, Img_Window_0_2, Img_Window_0_3, Img_Window_0_4, Img_Window_0_5
+
+Enumeration FormGadget
+  #Container_0
+EndEnumeration
+
+Enumeration FormMenu
+  #MenuItem_10
+  #MenuItem_2
+  #MenuItem_3
+  #MenuItem_11
+  #MenuItem_5
+  #MenuItem_8
+  #MenuItem_9
+  #Toolbar_Normal
+  #Toolbar_Bold
+  #Toolbar_Italic
+  #Toolbar_Title
+  #Toolbar_Code
+  #Toolbar_Highl
+EndEnumeration
+
+UsePNGImageDecoder()
+
+Img_Window_0_0 = LoadImage(#PB_Any,"icons\Normal.png")
+Img_Window_0_1 = LoadImage(#PB_Any,"icons\Bold.png")
+Img_Window_0_2 = LoadImage(#PB_Any,"icons\italic.png")
+Img_Window_0_3 = LoadImage(#PB_Any,"icons\Title.png")
+Img_Window_0_4 = LoadImage(#PB_Any,"icons\Code.png")
+Img_Window_0_5 = LoadImage(#PB_Any,"icons\highlighted.png")
+
+
+;Declaration of Scintilla_CallBack
+Declare ScintillaCallBack(MyGadget, *scinotify.SCNotification)
+
+  
+Procedure OpenWindow_0(x = 0, y = 0, width = 1064, height = 576)
+  Window_0 = OpenWindow(#PB_Any, x, y, width, height, "Notes.C - Notes Collector", #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_MaximizeGadget | #PB_Window_SizeGadget | #PB_Window_TitleBar | #PB_Window_ScreenCentered | #PB_Window_SystemMenu | #PB_Window_MinimizeGadget | #PB_Window_MaximizeGadget | #PB_Window_SizeGadget | #PB_Window_TitleBar | #PB_Window_ScreenCentered)
+  CreateToolBar(0, WindowID(Window_0))
+  ToolBarImageButton(#Toolbar_Normal,ImageID(Img_Window_0_0))
+  ToolBarImageButton(#Toolbar_Bold,ImageID(Img_Window_0_1))
+  ToolBarImageButton(#Toolbar_Italic,ImageID(Img_Window_0_2))
+  ToolBarImageButton(#Toolbar_Title,ImageID(Img_Window_0_3))
+  ToolBarImageButton(#Toolbar_Code,ImageID(Img_Window_0_4))
+  ToolBarImageButton(#Toolbar_Highl,ImageID(Img_Window_0_5))
+  CreateStatusBar(0, WindowID(Window_0))
+  AddStatusBarField(780)
+  StatusBarText(0, 0, " ")
+  AddStatusBarField(550)
+  StatusBarText(0, 1, " ")
+  CreateMenu(0, WindowID(Window_0))
+  MenuTitle("File")
+  MenuItem(#MenuItem_10, "New")
+  MenuItem(#MenuItem_2, "Open")
+  MenuItem(#MenuItem_3, "Save")
+  MenuItem(#MenuItem_11, "Close")
+  MenuBar()
+  MenuItem(#MenuItem_5, "Quit")
+  MenuTitle("Edit")
+  MenuTitle("Help")
+  MenuItem(#MenuItem_8, "Credits")
+  MenuItem(#MenuItem_9, "About")
+  ContainerGadget(#Container_0, 0, ToolBarHeight(0) + 0, 1064, 506)
+  Scintilla_0 = ScintillaGadget(#PB_Any, 0, 0, 1064, 506, @ScintillaCallBack())
+  CloseGadgetList()
+EndProcedure
+
+
+; IDE Options = PureBasic 6.21 (Windows - x64)
+; CursorPosition = 63
+; FirstLine = 36
+; Folding = -
+; EnableXP
