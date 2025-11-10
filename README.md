@@ -20,8 +20,8 @@ It uses the **Scintilla editing component**, allowing text folding and rich text
 
 ## 🖥️ Screenshot
 
-<img width="1066" height="611" alt="image" src="https://github.com/user-attachments/assets/d3f21cc6-f158-4198-b974-7f1f2fb565a3" />
-
+<img width="1079" height="616" alt="image" src="https://github.com/user-attachments/assets/5c55ae8f-2107-4f7d-90fb-3e6491e75cc2" />
+<br><br>
 ---
 
 ## 🧱 Technical Overview
